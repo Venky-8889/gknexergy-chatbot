@@ -1,0 +1,144 @@
+{
+  "company": {
+    "name": "GK Nexergy",
+    "legalName": "GKNEXERGY PRIVATE LIMITED",
+    "tagline": "Train. Build. Transform.",
+    "mission": "Empowering local talent, building high-performance technology solutions, and helping businesses transform for the digital future.",
+    "location": "Proddatur, Cuddapah, Andhra Pradesh, India",
+    "email": "contact@gknexergy.com",
+    "phone": "+91 9704585960",
+    "whatsapp": "+919704585960",
+    "website": "https://www.gknexergy.com",
+    "social": {
+      "whatsapp": "https://wa.me/919704585960",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com"
+    }
+  },
+  "solutions": [
+    {
+      "id": "custom-software",
+      "title": "Custom Software & High-Performance Web Applications",
+      "tagline": "Software Built Around Your Business",
+      "description": "Proven software architecture, custom business platforms, and scalable web apps engineered for performance, security, and real-world reliability.",
+      "features": ["Scalable Cloud Architecture", "Modern Microservices", "Full-Stack Development", "API Integrations"],
+      "link": "https://www.gknexergy.com/solutions"
+    },
+    {
+      "id": "mobile-apps",
+      "title": "Mobile Application Development",
+      "tagline": "Mobile Experiences Designed for Real Users",
+      "description": "Native and cross-platform mobile apps for iOS and Android engineered for high responsiveness, offline capabilities, and seamless user experience.",
+      "features": ["Cross-platform & Native", "Business & Customer Apps", "Scalable Mobile Architecture", "High UX Polish"],
+      "link": "https://www.gknexergy.com/solutions"
+    },
+    {
+      "id": "digital-transformation",
+      "title": "Digital Transformation & Operating Models",
+      "tagline": "From Manual Processes to Digital Possibilities",
+      "description": "Modernizing legacy workflows into streamlined digital operating models with workflow automation, paperless processes, and reliable systems.",
+      "features": ["Workflow Automation", "Technology Roadmapping", "Scalable Operating Models", "Cloud Migration"],
+      "link": "https://www.gknexergy.com/solutions"
+    },
+    {
+      "id": "ai-intelligent-systems",
+      "title": "Intelligent Workflows & Applied AI",
+      "tagline": "Turn Data and Workflows Into Intelligent Systems",
+      "description": "Cutting-edge artificial intelligence, generative AI implementations, custom chatbot solutions, predictive analytics, and automated machine learning pipelines.",
+      "features": ["Generative AI & LLMs", "Predictive Capabilities", "Automated Workflows", "Business Intelligence"],
+      "link": "https://www.gknexergy.com/solutions"
+    }
+  ],
+  "academy": [
+    {
+      "id": "cyber-security",
+      "title": "Cyber Security Fundamentals & Ethical Hacking",
+      "motto": "Learn to Think Like an Attacker. Defend Like a Professional.",
+      "description": "Comprehensive practical cybersecurity training covering attack vectors, vulnerability assessment, ethical hacking methodologies, and enterprise defense hardening.",
+      "topics": [
+        "Cyber security fundamentals",
+        "Ethical hacking methodology",
+        "Vulnerability assessment & penetration testing",
+        "Web application security & hardening",
+        "Industry-standard security tools"
+      ],
+      "audience": "Students, graduates and IT professionals who want to build a career in cybersecurity.",
+      "link": "https://www.gknexergy.com/academy"
+    },
+    {
+      "id": "ai-digital-marketing",
+      "title": "AI-Powered Digital Marketing",
+      "motto": "Market Smarter With AI at Your Side.",
+      "description": "Master modern digital marketing by leveraging generative AI tools, prompt engineering for marketing, performance campaigns, SEO, and content automation.",
+      "topics": [
+        "AI tools for marketing & automation",
+        "Digital marketing fundamentals & strategy",
+        "AI-assisted content creation & copywriting",
+        "Practical campaign applications & analytics",
+        "Growth hacking & brand building"
+      ],
+      "audience": "Students, marketers, entrepreneurs, and freelancers looking to accelerate growth with AI.",
+      "link": "https://www.gknexergy.com/academy"
+    },
+    {
+      "id": "postgresql-mastery",
+      "title": "PostgreSQL Database Mastery",
+      "motto": "Master the Layer Every Application Depends On.",
+      "description": "In-depth training on PostgreSQL relational database architecture, schema design, high-performance query optimization, indexing, and production reliability.",
+      "topics": [
+        "Relational database design & normalization",
+        "Writing clean, efficient SQL & joins",
+        "Indexing, execution plans & performance tuning",
+        "PostgreSQL in production & real-world backend projects"
+      ],
+      "audience": "Software developers, backend engineers, and data enthusiasts.",
+      "link": "https://www.gknexergy.com/academy"
+    },
+    {
+      "id": "tech-foundation",
+      "title": "Technology Foundation Program",
+      "motto": "Build Your Technology Foundation.",
+      "description": "Zero-to-hero comprehensive technology immersion: Python programming, databases, cloud architecture with AWS/Azure, and applied AI fundamentals.",
+      "topics": [
+        "Programming fundamentals & problem solving with Python",
+        "Data modelling, SQL & real database operations",
+        "Cloud fundamentals & deploying real workloads (AWS/Azure)",
+        "Modern AI concepts and practical applications"
+      ],
+      "audience": "College students, fresh graduates, career switchers, and career returnees.",
+      "link": "https://www.gknexergy.com/academy"
+    }
+  ],
+  "projects": [
+    {
+      "title": "AI-Integrated Hospital Management System",
+      "category": "Healthcare & AI",
+      "description": "Comprehensive healthcare platform featuring AI patient management, operational automation, EHR integration, and HIPAA-compliant data security."
+    },
+    {
+      "title": "AI-Integrated Real Estate Business Platform",
+      "category": "Real Estate & AI",
+      "description": "Property discovery AI, smart broker workflows, automated lead matching, and property valuation assistance."
+    },
+    {
+      "title": "AI-Enabled Restaurant Management Platform",
+      "category": "Hospitality & AI",
+      "description": "Smart point-of-sale, intelligent kitchen workflows, customer loyalty intelligence, and predictive inventory tracking."
+    },
+    {
+      "title": "Ayurvedic Product Showcase & Wholesale Enquiry System",
+      "category": "E-Commerce & B2B",
+      "description": "Govt-licensed product catalog, distributor portal, bulk ordering pipeline, and automated enquiry management."
+    }
+  ],
+  "features": {
+    "certificateVerification": {
+      "description": "Official verification system for Nexergy Academy certificates.",
+      "url": "https://www.gknexergy.com"
+    },
+    "whatsappSupport": {
+      "phone": "+91 9704585960",
+      "directUrl": "https://wa.me/919704585960"
+    }
+  }
+}

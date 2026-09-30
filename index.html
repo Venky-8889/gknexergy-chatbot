@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GK Nexergy | Technology, Training & Digital Solutions - AI Chatbot Showcase</title>
+  <link rel="stylesheet" href="widget.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B1120;
+      --card: #131D33;
+      --primary: #06B6D4;
+      --accent: #6366F1;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    /* Ambient glow */
+    .glow-bg {
+      position: fixed;
+      top: -20%;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+    .logo span {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .btn-contact {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-contact:hover {
+      opacity: 0.9;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 60px auto 40px;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .tagline-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6, 182, 212, 0.1);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    h1 span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #06b6d4, #2563eb);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+      transition: transform 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Live Chat Testing Banner */
+    .test-box {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background: rgba(19, 29, 51, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: left;
+    }
+    .test-box h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sample-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .prompt-btn {
+      background: #17233d;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .prompt-btn:hover {
+      background: #0284c7;
+      color: #fff;
+      border-color: #38bdf8;
+    }
+
+    /* Grid Sections */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: 30px;
+      font-family: 'Space Grotesk', sans-serif;
+      margin-bottom: 8px;
+    }
+    .section-title p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .grid-container {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(6, 182, 212, 0.4);
+    }
+    .card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Code Embed Box */
+    .embed-box {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      background: #0f172a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .embed-box pre {
+      background: #090e17;
+      padding: 16px;
+      border-radius: 8px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-top: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <span>⚡ GK Nexergy</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#solutions">Solutions</a>
+      <a href="#academy">Nexergy Academy</a>
+      <a href="#projects">Portfolio</a>
+      <a href="#embed">Embedding Guide</a>
+    </nav>
+    <a href="https://wa.me/919704585960" target="_blank" class="btn-contact">WhatsApp: +91 9704585960</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="tagline-badge">
+      <span>🚀 Train • Build • Transform</span>
+    </div>
+    <h1>Intelligent AI Chatbot for<br /><span>GK Nexergy Website</span></h1>
+    <p>
+      Equip <strong>gknexergy.com</strong> with a 24/7 AI Assistant that answers queries about
+      <strong>Nexergy Academy courses</strong>, handles <strong>custom software inquiries</strong>,
+      captures qualified leads, and connects visitors instantly to WhatsApp.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="window.gknInstance && window.gknInstance.openWindow()">
+        💬 Test Live Chatbot (Bottom-Right)
+      </button>
+      <a href="#embed" class="btn-secondary">
+        ⚙️ How to Embed on Site
+      </a>
+    </div>
+  </section>
+
+  <!-- Interactive Testbench Box -->
+  <div class="test-box">
+    <h3>⚡ Instant Question Tester (Click to test chatbot response)</h3>
+    <p style="font-size: 13.5px; color: var(--muted);">Click any sample question below to immediately open the widget and view the chatbot's tailored response:</p>
+    <div class="sample-prompts">
+      <button class="prompt-btn" onclick="testChat('What courses do you teach at Nexergy Academy?')">
+        🎓 "What courses do you teach at Nexergy Academy?"
+      </button>
+      <button class="prompt-btn" onclick="testChat('Can you develop a mobile app for our business?')">
+        📱 "Can you develop a mobile app for our business?"
+      </button>
+      <button class="prompt-btn" onclick="testChat('Tell me about the Cyber Security program')">
+        🛡️ "Tell me about the Cyber Security program"
+      </button>
+      <button class="prompt-btn" onclick="testChat('Can I talk to someone on WhatsApp?')">
+        💬 "Can I talk to someone on WhatsApp?"
+      </button>
+      <button class="prompt-btn" onclick="testChat('How do I verify an official certificate?')">
+        🔍 "How do I verify an official certificate?"
+      </button>
+      <button class="prompt-btn" onclick="testChat('What projects have you delivered?')">
+        🚀 "What projects have you delivered?"
+      </button>
+    </div>
+  </div>
+
+  <!-- Enterprise Solutions -->
+  <section id="solutions">
+    <div class="section-title">
+      <h2>Enterprise Technology Solutions</h2>
+      <p>Custom engineering tailored to your industry realities</p>
+    </div>
+    <div class="grid-container">
+      <div class="card">
+        <span class="card-icon">🌐</span>
+        <h4>Custom Software & Web Apps</h4>
+        <p>Proven architecture, scalable microservices, and high-performance web applications built for reliability.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📱</span>
+        <h4>Mobile App Development</h4>
+        <p>Native and cross-platform mobile apps for iOS & Android engineered with delightful UX and offline support.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🤖</span>
+        <h4>Intelligent Workflows & AI</h4>
+        <p>Generative AI integrations, machine learning pipelines, chatbots, and predictive workflow automation.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔄</span>
+        <h4>Digital Transformation</h4>
+        <p>Transition from manual processes to scalable cloud operating models without enterprise complexity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nexergy Academy -->
+  <section id="academy">
+    <div class="section-title">
+      <h2>Nexergy Academy Programs</h2>
+      <p>Industry-grade skill development empowering local and underserved talent</p>
+    </div>
+    <div class="grid-container">
+      <div class="card">
+        <span class="card-icon">🛡️</span>
+        <h4>Cyber Security & Ethical Hacking</h4>
+        <p>Learn to think like an attacker and defend like a professional. Vulnerability scanning, web app security, and defensive hardening.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📈</span>
+        <h4>AI-Powered Digital Marketing</h4>
+        <p>Market smarter with AI. Modern generative AI tools for copy, high-ROI campaign management, and digital growth strategy.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🗄️</span>
+        <h4>PostgreSQL Database Mastery</h4>
+        <p>Master the layer every application depends on. Schema design, indexing, advanced SQL joins, and performance tuning.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💻</span>
+        <h4>Technology Foundation</h4>
+        <p>Comprehensive starting journey: Python programming, databases, cloud essentials (AWS/Azure), and AI basics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Embedding Instructions -->
+  <section id="embed" class="embed-box">
+    <h3 style="color: #38bdf8; font-size: 18px;">📦 How to Embed this Chatbot into https://www.gknexergy.com</h3>
+    <p style="color: var(--muted); font-size: 14px; margin-top: 6px;">
+      Integrating into your website (React, Vite, Next.js, or plain HTML) takes less than 2 minutes. Just add the CSS and JS files before the closing <code>&lt;/body&gt;</code> tag:
+    </p>
+
+    <pre><code>&lt;!-- 1. Include the Chatbot Stylesheet in &lt;head&gt; --&gt;
+&lt;link rel="stylesheet" href="/chatbot/widget.css" /&gt;
+
+&lt;!-- 2. Include the Chatbot Script before &lt;/body&gt; --&gt;
+&lt;script src="/chatbot/widget.js"&gt;&lt;/script&gt;</code></pre>
+
+    <p style="color: var(--muted); font-size: 13.5px; margin-top: 14px;">
+      ✨ <strong>Zero External Dependencies</strong>: Pure Vanilla JavaScript & CSS. No jQuery, React, or heavy bundle needed.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 GK Nexergy (GKNEXERGY PRIVATE LIMITED) • Proddatur, Cuddapah, Andhra Pradesh, India</p>
+    <p style="margin-top: 4px; font-size: 12px; color: #64748b;">Support: contact@gknexergy.com | Direct WhatsApp: +91 9704585960</p>
+  </footer>
+
+  <!-- Include Chatbot Widget -->
+  <script src="widget.js"></script>
+
+  <script>
+    function testChat(prompt) {
+      if (window.gknInstance) {
+        window.gknInstance.openWindow();
+        setTimeout(() => {
+          window.gknInstance.handleUserMessage(prompt);
+        }, 300);
+      }
+    }
+  </script>
+</body>
+</html>
